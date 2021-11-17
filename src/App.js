@@ -1,14 +1,16 @@
 import './App.css';
 import { observer } from 'mobx-react-lite';
+import './App.css'
 
 const App = observer((props) => {
-  console.log(props)
   return (
-   <div>
+   <div className='App'>
      <h1>Counter</h1>
-     <p>Value: {props.store.counter}</p>
-     <button type='button' onClick={() => props.store.increment()}>Increment</button>
-     <button type='button' onClick={() => props.store.decrement()}>Decrement</button>
+     <div className='counter'>
+      <button type='button' onClick={() => props.store.increment()}>+</button>
+      <span>{props.store.counter}</span>
+      <button type='button' onClick={() => props.store.decrement()}>-</button>
+     </div>
    </div>
   );
 })
